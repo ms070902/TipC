@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/BillAmountLabel"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    android:scrollbarTrackVertical="@android:drawable/checkbox_on_background"
+    android:soundEffectsEnabled="true"
+    android:splitMotionEvents="true"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/BillAmtLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="200dp"
+        android:text="Base Amount"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/TipLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="8dp"
+        android:text="5"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textSize="20sp"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/BillAmtLabel" />
+
+    <EditText
+        android:id="@+id/baseAmt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="200dp"
+        android:ems="8"
+        android:inputType="numberDecimal"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/BillAmtLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toEndOf="@+id/BillAmtLabel"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@android:style/Widget.Material.Light.SeekBar"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="28dp"
+        android:max="30"
+        android:progress="3"
+        android:progressDrawable="@android:drawable/alert_dark_frame"
+        android:scrollbarSize="6dp"
+        android:thumb="@drawable/background2"
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/baseAmt"
+        app:layout_constraintTop_toBottomOf="@+id/baseAmt" />
+
+    <Button
+        android:id="@+id/calculateBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="200dp"
+        android:onClick="billingStatus"
+        android:shadowColor="@color/teal_200"
+        android:stateListAnimator="@android:animator/fade_in"
+        android:text="Calculate"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/teal_200"
+        android:textColorHint="@color/design_default_color_secondary"
+        android:textCursorDrawable="@drawable/background1"
+        android:textFontWeight="@integer/material_motion_duration_long_1"
+        app:iconTint="#07B7CD"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/TipLabel"
+        app:layout_constraintVertical_bias="1.0"
+        app:rippleColor="@color/design_default_color_secondary" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="%"
+        android:textColor="@color/design_default_color_on_primary"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/BillAmtLabel"
+        app:layout_constraintTop_toBottomOf="@+id/BillAmtLabel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
